@@ -1,0 +1,38 @@
+digraph G {
+    graph [rankdir=LR labelfontcolor=red fontname="monospace" nodesep=1 size="20,33"]
+    node [fontname="monospace" fontsize=11  shape="circle"]
+    edge [fontname="monospace" color="grey" fontsize=11]
+    
+    init [label="START"]
+    select [label="SELECT_STMT"]
+    all_cols [label="ALL_COLS"]
+    explicit_cols [label="EXPLICIT_COLS"]
+    more_cols [label="MORE_COLS"]
+    from [label="FROM_CLAUSE"]
+    table [label="TABLENAME"]
+    valid [label="VALID_SQL" shape="doublecircle"]
+    invalid [label="INVALID_SQL" shape="doublecircle"]
+
+    init -> select [label="SELECT"]
+    init -> invalid [label="token"]
+    select -> all_cols [label="*"]
+    select -> explicit_cols [label="token"]
+
+    explicit_cols -> more_cols [label="COMMA"]
+    more_cols -> explicit_cols [label="token"]
+
+    explicit_cols -> from [label="FROM"]
+    all_cols -> invalid [label="token"]
+    
+    all_cols -> from [label="FROM"]
+    all_cols -> invalid [label="token"]
+
+    from -> table [label="token"]
+    table -> valid [label="SEMI-COLON"]
+    valid -> valid [label="SEMI-COLON"]
+
+    table -> invalid [label="token"]
+    
+    invalid -> invalid [label="token"]
+    valid -> invalid [label="token"]
+}
