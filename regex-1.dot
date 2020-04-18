@@ -1,0 +1,16 @@
+digraph G {
+    graph [rankdir=LR labelfontcolor=red fontname="monospace" nodesep=1.0 size="7.75,10.25"]
+    node [fontname="monospace" fontsize=11]
+    edge [fontname="monospace" color="grey" fontsize=11]
+    
+    q0 [label="start" shape="circle"]
+    q1 [label="q1" shape="circle"]
+    q2 [label="q2" shape="circle"]
+    q3 [label="q3" shape="doublecircle"]
+
+    q0 -> q1 [label="a"]
+    q1 -> q3 [label="c"]
+    q2 -> q3 [label="c"]
+    q1 -> q2 [label="b"]
+    q2 -> q2 [label="b"]
+}
