@@ -11,10 +11,8 @@ digraph G {
     from [label="FROM_CLAUSE"]
     table [label="TABLENAME"]
     valid [label="VALID_SQL" shape="doublecircle"]
-    invalid [label="INVALID_SQL" shape="doublecircle"]
 
     init -> select [label="SELECT"]
-    init -> invalid [label="token"]
     select -> all_cols [label="*"]
     select -> explicit_cols [label="token"]
 
@@ -22,17 +20,10 @@ digraph G {
     more_cols -> explicit_cols [label="token"]
 
     explicit_cols -> from [label="FROM"]
-    all_cols -> invalid [label="token"]
     
     all_cols -> from [label="FROM"]
-    all_cols -> invalid [label="token"]
-
+    
     from -> table [label="token"]
     table -> valid [label="SEMI-COLON"]
     valid -> valid [label="SEMI-COLON"]
-
-    table -> invalid [label="token"]
-    
-    invalid -> invalid [label="token"]
-    valid -> invalid [label="token"]
 }
