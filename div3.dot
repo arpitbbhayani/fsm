@@ -1,5 +1,5 @@
 digraph G {
-    graph [rankdir=LR labelfontcolor=red fontname="monospace" nodesep=1.0 size="7.75,10.25"]
+    graph [rankdir=LR labelfontcolor=red fontname="monospace" nodesep=0.4 size="7.75,10.25"]
     node [fontname="monospace" fontsize=11]
     edge [fontname="monospace" color="grey" fontsize=11]
     
