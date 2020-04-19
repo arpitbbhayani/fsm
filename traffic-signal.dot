@@ -1,0 +1,12 @@
+digraph G {
+    graph [rankdir=LR labelfontcolor=red fontname="monospace" nodesep=2.0 size="25,33"]
+    node [fontname="monospace" fontsize=11  shape="circle"]
+    edge [fontname="monospace" color="grey" fontsize=11]
+    
+    start [label="start"]
+    green [label="GREEN"]
+    yellow [label="YELLOW"]
+    red [label="RED"]
+    
+    start -> green -> yellow -> red -> green
+}
